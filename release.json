@@ -1,10 +1,10 @@
 {
-  "versionCode": 35,
-  "versionName": "1.34",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.34/Hydraulic-Pressure-Calculator-1.34.apk",
-  "sha256": "a982954a41be7053dc41c6e14aa8855bda42bc0e44dc2a91e4d6e926531fb512",
-  "releaseDate": "2026-11-23T19:36:55Z",
-  "releaseNotes": "Ana ekran yeniden düzenlendi: Son 5 Hesaplama kaydırmasız tam görünür; alan başlığı Kullanılacak Silindir Boyutu (Metrik) oldu.",
-  "releaseNotesEn": "Home screen re-laid out: Last 5 Calculations fully visible without scrolling; field renamed Cylinder Size to Use (Metric).",
+  "versionCode": 36,
+  "versionName": "1.35",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.35/Hydraulic-Pressure-Calculator-1.35.apk",
+  "sha256": "ee7632f3ab5d26dbd0c84cac3b5ced3b0052cfa907bea079ec5b5b2bec973b82",
+  "releaseDate": "2026-11-23T19:43:34Z",
+  "releaseNotes": "PDF raporu yenilendi: taşma yok, otomatik sayfa geçişi, sayfa numaraları, öne çıkan basınç, her rapora özel QR kod ve rapor kimliği. Silindir örneği M20, M27, M36, M42.",
+  "releaseNotesEn": "New PDF report: no overflow, automatic page breaks, page numbers, highlighted pressure, unique QR code and report ID per report. Cylinder example M20, M27, M36, M42.",
   "minimumSupportedVersionCode": 0
 }

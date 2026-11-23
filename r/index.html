@@ -98,12 +98,13 @@ async function load(){
   if(!SID){SID=ENTRIES[0].ID.slice(0,8);CREATED=ENTRIES[0].CT||""}
   return skipped}
 
+function af(f){const s=String(f.S||"");return f.T==="CASSETTE"&&s&&!/^A\/F/i.test(s)?"A/F "+s:s}
 function sections(f){
   const cas=f.T==="CASSETTE";let b="";
   b+=`<section><h2>${T.info}</h2>`+row(T.id,f.ID)+row(T.name,f.RN)+(f.T?row(T.type,cas?T.cas:T.cyl):"")+(f.CALC?row(T.date,fmt(f.CALC)):"")+row(T.model,f.M)+`</section>`;
   b+=`<section><h2>${T.press}</h2><div class="big">${esc(f.BAR||"")} BAR</div></section>`;
   if(f.MB||f.IN||f.KN)b+=`<section><h2>${T.inp}</h2>`+(f.MB?row(T.mb,num(f.MB)+" BAR"):"")+(f.IN?row(T.ins,num(f.IN)+" kN·Nm"):"")+(f.KN?row(T.kn,num(f.KN)+" kN·Nm"):"")+`</section>`;
-  if(f.T&&f.S)b+=`<section><h2>${cas?T.casH:T.cylH}</h2>`+row(cas?T.casT:T.cylT,f.ET)+row(cas?T.af:T.met,f.S)+`</section>`;
+  if(f.T&&f.S)b+=`<section><h2>${cas?T.casH:T.cylH}</h2>`+row(cas?T.casT:T.cylT,f.ET)+row(cas?T.af:T.met,af(f))+`</section>`;
   if(f.TN)b+=`<section><h2>${T.tech}</h2>`+row(T.by,f.TN+(f.TI?" ("+f.TI+")":""))+`</section>`;
   b+=`<section><h2>${T.ck}</h2>`+row(T.ck,f._ck)+`<div class="row"><span></span><span class="ok">✔ ${T.verified}</span></div></section>`;
   return b}
@@ -113,7 +114,7 @@ function render(skipped){
   b+=`<div class="all"><button id="allBtn">${T.all}</button><button id="shBtn" class="sec" style="margin-top:8px">${T.sv}</button><div class="bar" id="bar"><i id="barI"></i></div><div class="pt" id="pt"></div></div>`;
   ENTRIES.forEach((f,i)=>{
     const cas=f.T==="CASSETTE";
-    b+=`<details${ENTRIES.length===1?" open":""}><summary><span>#${i+1} · ${f.T?(cas?T.cas:T.cyl):""}${f.S?" · "+esc(f.S):""}<small>${esc(fmt(f.CALC||f.CT))}</small></span><b>${esc(f.BAR||"")} BAR</b></summary><div class="in">${sections(f)}<div class="all"><button class="sec" data-i="${i}">${T.one}</button></div></div></details>`});
+    b+=`<details${ENTRIES.length===1?" open":""}><summary><span>#${i+1} · ${f.T?(cas?T.cas:T.cyl):""}${f.S?" · "+esc(af(f)):""}<small>${esc(fmt(f.CALC||f.CT))}</small></span><b>${esc(f.BAR||"")} BAR</b></summary><div class="in">${sections(f)}<div class="all"><button class="sec" data-i="${i}">${T.one}</button></div></div></details>`});
   b+=`<div class="note">${T.note}</div>`;
   $("app").innerHTML=b;document.title="HPC "+SID;
   $("allBtn").onclick=()=>downloadAll(false);$("shBtn").onclick=()=>downloadAll(true);PDFP=null;setTimeout(()=>getPdf().catch(()=>{}),300);
@@ -140,7 +141,7 @@ function pageCanvas(f,idx,total,withQr){
   head(T.press);c.fillStyle="#e8f0ff";c.fillRect(M,y-4,W,50);c.fillStyle="#0b3d91";c.textAlign="center";
   c.font="bold 30px Arial,sans-serif";c.fillText((f.BAR||"")+" BAR",PW/2,y+30);c.textAlign="left";y+=62;
   if(f.MB||f.IN||f.KN){head(T.inp);if(f.MB)kv(T.mb,num(f.MB)+" BAR");if(f.IN)kv(T.ins,num(f.IN)+" kN·Nm");if(f.KN)kv(T.kn,num(f.KN)+" kN·Nm");y+=6}
-  if(f.T&&f.S){head(cas?T.casH:T.cylH);kv(cas?T.casT:T.cylT,f.ET);kv(cas?T.af:T.met,f.S);y+=6}
+  if(f.T&&f.S){head(cas?T.casH:T.cylH);kv(cas?T.casT:T.cylT,f.ET);kv(cas?T.af:T.met,af(f));y+=6}
   if(f.TN){head(T.tech);kv(T.by,f.TN+(f.TI?" ("+f.TI+")":""));y+=6}
   // bottom block: QR only on the first page of a merged PDF; other pages carry the shared ID
   const q=118,qy=PH-q-70;

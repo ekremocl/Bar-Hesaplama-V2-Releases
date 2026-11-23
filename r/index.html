@@ -42,7 +42,7 @@ const L={tr:{title:"Hesaplama Raporu",id:"Rapor Kimliği",share:"Paylaşım Kiml
 info:"RAPOR BİLGİLERİ",press:"HESAPLANAN BASINÇ",inp:"GİRİŞ PARAMETRELERİ",model:"Model Bilgisi",date:"Hesaplama Tarihi",created:"Paylaşım Tarihi",
 mb:"Max BAR (Silindir)",ins:"Instruction (Tork Talimatı)",kn:"Max kN·Nm (Ekipman)",casH:"KASET VE LOKMA BİLGİLERİ",cylH:"SİLİNDİR BİLGİLERİ",casT:"Kaset Tipi",cylT:"Silindir Tipi",
 af:"Lokma Ölçüsü (A/F)",met:"Silindir Boyutu (Metrik)",tech:"TEKNİSYEN BİLGİLERİ",by:"Hesaplamayı Yapan",verified:"Doğrulama kodu geçerli",ck:"Doğrulama Kodu",
-count:"hesaplama paylaşıldı",all:"Tüm Hesaplamaları PDF Olarak İndir",one:"Bu hesaplamayı PDF indir",prog:"PDF hazırlanıyor",done:"Tamamlandı – PDF indirildi",
+count:"hesaplama paylaşıldı",all:"Tüm Hesaplamaları PDF Olarak İndir",one:"Bu hesaplamayı PDF indir",sv:"Paylaş / Dosyalara Kaydet",cov:"Toplu Paylaşım Raporu",covN:"Bu sayfadaki QR kod tüm hesaplamaları içeren ortak sayfayı açar.",prog:"PDF hazırlanıyor",done:"Tamamlandı – PDF indirildi",
 errT:"Rapor açılamadı",errB:"Bu bağlantı geçerli bir rapor içermiyor, eksik veya bozulmuş. Lütfen QR kodu yeniden okutun.",
 old:"Tarayıcınız bu bağlantıyı açmak için çok eski. Lütfen tarayıcıyı güncelleyin.",skipped:"bozuk kayıt atlandı",
 note:"Bu rapor bilgilendirme amaçlıdır. Resmi onaylı veya sertifikalı bir mühendislik belgesi değildir. Veriler QR bağlantısının içindedir; sunucuda saklanmaz.",
@@ -51,7 +51,7 @@ en:{title:"Calculation Report",id:"Report ID",share:"Share ID",name:"Report Name
 info:"REPORT INFORMATION",press:"CALCULATED PRESSURE",inp:"INPUT PARAMETERS",model:"Model",date:"Calculation Date",created:"Shared On",
 mb:"Max BAR (Cylinder)",ins:"Instruction (Torque)",kn:"Max kN·Nm (Equipment)",casH:"CASSETTE & SOCKET INFORMATION",cylH:"CYLINDER INFORMATION",casT:"Cassette Type",cylT:"Cylinder Type",
 af:"Socket Size (A/F)",met:"Cylinder Size (Metric)",tech:"TECHNICIAN INFORMATION",by:"Calculated by",verified:"Verification code valid",ck:"Verification Code",
-count:"calculations shared",all:"Download All Calculations as PDF",one:"Download this calculation as PDF",prog:"Preparing PDFs",done:"Done – PDF downloaded",
+count:"calculations shared",all:"Download All Calculations as PDF",one:"Download this calculation as PDF",sv:"Share / Save to Files",cov:"Bulk Share Report",covN:"The QR code on this page opens the shared page with all calculations.",prog:"Preparing PDFs",done:"Done – PDF downloaded",
 errT:"Report cannot be opened",errB:"This link does not contain a valid report; it is incomplete or damaged. Please scan the QR code again.",
 old:"Your browser is too old to open this link. Please update it.",skipped:"damaged record skipped",
 note:"This report is informational only and is not an officially approved or certified engineering document. The data is carried inside the QR link and is not stored on a server.",
@@ -60,7 +60,7 @@ de:{title:"Berechnungsbericht",id:"Berichts-ID",share:"Freigabe-ID",name:"Berich
 info:"BERICHTSINFORMATIONEN",press:"BERECHNETER DRUCK",inp:"EINGABEPARAMETER",model:"Modell",date:"Berechnungsdatum",created:"Geteilt am",
 mb:"Max BAR (Zylinder)",ins:"Instruction (Drehmoment)",kn:"Max kN·Nm (Ausrüstung)",casH:"KASSETTEN- UND NUSSINFORMATIONEN",cylH:"ZYLINDERINFORMATIONEN",casT:"Kassettentyp",cylT:"Zylindertyp",
 af:"Nussgröße (A/F)",met:"Zylindergröße (metrisch)",tech:"TECHNIKERINFORMATIONEN",by:"Berechnet von",verified:"Prüfcode gültig",ck:"Prüfcode",
-count:"Berechnungen geteilt",all:"Alle Berechnungen als PDF herunterladen",one:"Diese Berechnung als PDF laden",prog:"PDFs werden erstellt",done:"Fertig – PDF heruntergeladen",
+count:"Berechnungen geteilt",all:"Alle Berechnungen als PDF herunterladen",one:"Diese Berechnung als PDF laden",sv:"Teilen / In Dateien sichern",cov:"Sammelbericht",covN:"Der QR-Code auf dieser Seite öffnet die gemeinsame Seite mit allen Berechnungen.",prog:"PDFs werden erstellt",done:"Fertig – PDF heruntergeladen",
 errT:"Bericht kann nicht geöffnet werden",errB:"Dieser Link enthält keinen gültigen Bericht; er ist unvollständig oder beschädigt. Bitte QR-Code erneut scannen.",
 old:"Ihr Browser ist zu alt für diesen Link. Bitte aktualisieren.",skipped:"beschädigter Eintrag übersprungen",
 note:"Dieser Bericht dient nur der Information und ist kein amtlich genehmigtes oder zertifiziertes Dokument. Die Daten stehen im QR-Link und werden nicht auf einem Server gespeichert.",
@@ -110,14 +110,14 @@ function sections(f){
 
 function render(skipped){
   let b=`<header><h1>Hydraulic Pressure Calculator</h1><p>${T.share}: ${esc(SID)}<br>${ENTRIES.length} ${T.count}${skipped?" · "+skipped+" "+T.skipped:""}</p></header>`;
-  b+=`<div class="all"><button id="allBtn">${T.all}</button><div class="bar" id="bar"><i id="barI"></i></div><div class="pt" id="pt"></div></div>`;
+  b+=`<div class="all"><button id="allBtn">${T.all}</button><button id="shBtn" class="sec" style="margin-top:8px">${T.sv}</button><div class="bar" id="bar"><i id="barI"></i></div><div class="pt" id="pt"></div></div>`;
   ENTRIES.forEach((f,i)=>{
     const cas=f.T==="CASSETTE";
     b+=`<details${ENTRIES.length===1?" open":""}><summary><span>#${i+1} · ${f.T?(cas?T.cas:T.cyl):""}${f.S?" · "+esc(f.S):""}<small>${esc(fmt(f.CALC||f.CT))}</small></span><b>${esc(f.BAR||"")} BAR</b></summary><div class="in">${sections(f)}<div class="all"><button class="sec" data-i="${i}">${T.one}</button></div></div></details>`});
   b+=`<div class="note">${T.note}</div>`;
   $("app").innerHTML=b;document.title="HPC "+SID;
-  $("allBtn").onclick=downloadAll;
-  document.querySelectorAll("button.sec").forEach(x=>x.onclick=()=>downloadOne(+x.dataset.i,x))}
+  $("allBtn").onclick=()=>downloadAll(false);$("shBtn").onclick=()=>downloadAll(true);PDFP=null;setTimeout(()=>getPdf().catch(()=>{}),300);
+  document.querySelectorAll("button.sec[data-i]").forEach(x=>x.onclick=()=>downloadOne(+x.dataset.i,x))}
 function fail(m){$("app").innerHTML=`<header><h1>Hydraulic Pressure Calculator</h1></header><div class="err"><h1>${T.errT}</h1><p>${m==="old"?T.old:T.errB}</p></div>`}
 
 /* ---------- PDF (one merged PDF, one A4 page per calculation) ---------- */
@@ -160,12 +160,30 @@ function pageCanvas(f,idx,total,withQr){
   c.fillStyle="#5b6b8c";c.font="8.5px Arial,sans-serif";const words=T.note.split(" ");let line="",ny=PH-44;
   for(const w of words){const t=line?line+" "+w:w;if(c.measureText(t).width>W){c.fillText(line,M,ny);ny+=11;line=w}else line=t}c.fillText(line,M,ny);
   return cv}
+function coverCanvas(total){
+  const cv=document.createElement("canvas");cv.width=Math.round(PW*SC);cv.height=Math.round(PH*SC);
+  const c=cv.getContext("2d");c.scale(SC,SC);c.fillStyle="#fff";c.fillRect(0,0,PW,PH);
+  const M=40,W=PW-2*M;
+  c.fillStyle="#0b3d91";c.fillRect(0,0,PW,66);
+  c.fillStyle="#fff";c.textBaseline="alphabetic";c.font="bold 19px Arial,sans-serif";c.fillText("Hydraulic Pressure Calculator",M,30);
+  c.font="11px Arial,sans-serif";c.fillText(T.cov+" · "+total,M,50);
+  const q=300,qx=(PW-q)/2,qy=200;
+  c.strokeStyle="#d5def0";c.strokeRect(qx,qy,q,q);
+  try{const qr=qrcode(0,"L");qr.addData(location.href);qr.make();const n=qr.getModuleCount(),cell=(q-8)/(n+8);
+    c.fillStyle="#000";for(let r=0;r<n;r++)for(let k=0;k<n;k++)if(qr.isDark(r,k))c.fillRect(qx+4+cell*4+k*cell,qy+4+cell*4+r*cell,cell+.25,cell+.25)}catch(e){}
+  c.textAlign="center";c.fillStyle="#5b6b8c";c.font="12px Arial,sans-serif";c.fillText(T.share,PW/2,qy+q+36);
+  c.fillStyle="#14213d";c.font="bold 22px Arial,sans-serif";c.fillText(SID,PW/2,qy+q+64);
+  c.fillStyle="#0b3d91";c.font="bold 14px Arial,sans-serif";c.fillText(total+" "+T.count,PW/2,qy+q+92);
+  c.textAlign="left";
+  c.fillStyle="#5b6b8c";c.font="8.5px Arial,sans-serif";const words=T.covN.split(" ");let line="",ny=PH-44;
+  for(const w of words){const t=line?line+" "+w:w;if(c.measureText(t).width>W){c.fillText(line,M,ny);ny+=11;line=w}else line=t}c.fillText(line,M,ny);
+  return cv}
 const enc=new TextEncoder();
 function cat(parts){let n=0;parts.forEach(p=>n+=p.length);const o=new Uint8Array(n);let k=0;parts.forEach(p=>{o.set(p,k);k+=p.length});return o}
 async function makePdf(items){
   // items: [{f,idx,total,qr}] -> one PDF, one A4 page per item
   const jpgs=[];
-  for(const it of items){const cv=pageCanvas(it.f,it.idx,it.total,it.qr);
+  for(const it of items){const cv=it.cover?coverCanvas(it.total):pageCanvas(it.f,it.idx,it.total,it.qr);
     jpgs.push({w:cv.width,h:cv.height,d:new Uint8Array(await new Promise(r=>cv.toBlob(bl=>bl.arrayBuffer().then(r),"image/jpeg",.92)))});
     await new Promise(r=>setTimeout(r,0))}
   const N=jpgs.length,parts=[],offs=[];let off=0;
@@ -186,12 +204,15 @@ function fname(f,i){const t=f.T==="CASSETTE"?"Cassette":f.T==="CYLINDER"?"Cylind
 function save(blob,name){const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();
   setTimeout(()=>{a.remove();URL.revokeObjectURL(u)},4000)}
 async function downloadOne(i,btn){btn.disabled=true;try{const d=await makePdf([{f:ENTRIES[i],idx:i,total:ENTRIES.length,qr:true}]);save(new Blob([d],{type:"application/pdf"}),fname(ENTRIES[i],i))}finally{btn.disabled=false}}
-async function downloadAll(){
-  const btn=$("allBtn"),bar=$("bar"),bi=$("barI"),pt=$("pt");btn.disabled=true;bar.style.display="block";bi.style.width="10%";pt.textContent=T.prog+" ("+ENTRIES.length+")";
-  try{await new Promise(r=>setTimeout(r,30));
-    const d=await makePdf(ENTRIES.map((f,i)=>({f,idx:i,total:ENTRIES.length,qr:i===0})));
-    save(new Blob([d],{type:"application/pdf"}),"HPC-"+SID+".pdf");bi.style.width="100%";pt.textContent=T.done;
-  }catch(e){pt.textContent="Error: "+e}finally{btn.disabled=false}}
+let PDFP=null;
+function getPdf(){if(!PDFP)PDFP=makePdf([{cover:true,total:ENTRIES.length}].concat(ENTRIES.map((f,i)=>({f,idx:i,total:ENTRIES.length,qr:false})))).then(d=>new Blob([d],{type:"application/pdf"}));return PDFP}
+async function downloadAll(share){
+  const btn=$("allBtn"),sb=$("shBtn"),bar=$("bar"),bi=$("barI"),pt=$("pt");btn.disabled=true;sb.disabled=true;bar.style.display="block";bi.style.width="10%";pt.textContent=T.prog+" ("+ENTRIES.length+")";
+  try{const blob=await getPdf(),name="HPC-"+SID+".pdf";bi.style.width="100%";
+    if(share&&navigator.canShare){const file=new File([blob],name,{type:"application/pdf"});
+      if(navigator.canShare({files:[file]})){try{await navigator.share({files:[file],title:name});pt.textContent=T.done;return}catch(e){if(e&&e.name==="AbortError"){pt.textContent="";return}}}}
+    save(blob,name);pt.textContent=T.done;
+  }catch(e){pt.textContent="Error: "+e}finally{btn.disabled=false;sb.disabled=false}}
 
 load().then(render).catch(e=>fail(e));
 </script>

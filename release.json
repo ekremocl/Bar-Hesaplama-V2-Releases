@@ -1,10 +1,10 @@
 {
-  "versionCode": 24,
-  "versionName": "1.23",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.23/Hydraulic-Pressure-Calculator-1.23.apk",
-  "sha256": "1bd19d20407f2c35d23fc493ecd941126deb29a7465dda7746a9268af47547bb",
-  "releaseDate": "2026-11-23T17:56:14Z",
-  "releaseNotes": "Uygulama açılışında güncelleme arka planda otomatik denetleniyor; yeni sürüm varsa ana ekranda uyarı gösteriliyor.",
-  "releaseNotesEn": "The app now checks for updates in the background on launch and shows an alert on the home screen when a new version exists.",
+  "versionCode": 25,
+  "versionName": "1.24",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.24/Hydraulic-Pressure-Calculator-1.24.apk",
+  "sha256": "068281368110451eef23876a8ce85fb46c9c4e44d9822b0e67b858730b8a16bc",
+  "releaseDate": "2026-11-23T18:09:20Z",
+  "releaseNotes": "Almanca dil desteği eklendi (Türkçe / İngilizce / Almanca). Dil Ayarlar'dan seçilir, anında uygulanır; kullanım kılavuzu seçilen dilde açılır.",
+  "releaseNotesEn": "Added German language support (Turkish / English / German). Choose it in Settings; it applies instantly and the user manual opens in the selected language.",
   "minimumSupportedVersionCode": 0
 }

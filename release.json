@@ -1,10 +1,10 @@
 {
-  "versionCode": 32,
-  "versionName": "1.31",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.31/Hydraulic-Pressure-Calculator-1.31.apk",
-  "sha256": "9067eefffdf7a835092dcab3c95fb2f180868aefb3cb90b32ae9c9739e2b162d",
-  "releaseDate": "2026-11-23T19:07:44Z",
-  "releaseNotes": "PDF oluştururken rapor adı girilir; PDF başlığında, dosya adında ve geçmiş kaydında görünür.",
-  "releaseNotesEn": "A report name is entered when creating a PDF; shown as title, in the file name and in history.",
+  "versionCode": 33,
+  "versionName": "1.32",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.32/Hydraulic-Pressure-Calculator-1.32.apk",
+  "sha256": "a0ed774a13ff02192181dad9a94130d897651b1057375d235f53a55efa9d9d95",
+  "releaseDate": "2026-11-23T19:23:31Z",
+  "releaseNotes": "Kaset (A/F lokma) ve Silindir (metrik saplama) ölçü girişi; geçmiş ve PDF raporuna işlenir.",
+  "releaseNotesEn": "Cassette (A/F socket) and Cylinder (metric stud) size input; stored in history and PDF report.",
   "minimumSupportedVersionCode": 0
 }

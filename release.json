@@ -1,10 +1,10 @@
 {
-  "versionCode": 36,
-  "versionName": "1.35",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.35/Hydraulic-Pressure-Calculator-1.35.apk",
-  "sha256": "ee7632f3ab5d26dbd0c84cac3b5ced3b0052cfa907bea079ec5b5b2bec973b82",
-  "releaseDate": "2026-11-23T19:43:34Z",
-  "releaseNotes": "PDF raporu yenilendi: taşma yok, otomatik sayfa geçişi, sayfa numaraları, öne çıkan basınç, her rapora özel QR kod ve rapor kimliği. Silindir örneği M20, M27, M36, M42.",
-  "releaseNotesEn": "New PDF report: no overflow, automatic page breaks, page numbers, highlighted pressure, unique QR code and report ID per report. Cylinder example M20, M27, M36, M42.",
+  "versionCode": 37,
+  "versionName": "1.36",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.36/Hydraulic-Pressure-Calculator-1.36.apk",
+  "sha256": "836e210fd05a2a29f313743398ef039be63cd2f7039266bf892e1f041f55c264",
+  "releaseDate": "2026-11-23T19:45:55Z",
+  "releaseNotes": "Güncelleme denetimi önbelleğe takılmadan anında yeni sürümü görür. PDF raporu yenilendi (QR kod, sayfa düzeni).",
+  "releaseNotesEn": "Update check now sees new versions immediately. New PDF report (QR code, page layout).",
   "minimumSupportedVersionCode": 0
 }

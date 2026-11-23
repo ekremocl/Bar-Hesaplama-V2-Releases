@@ -42,7 +42,7 @@ const L={tr:{title:"Hesaplama Raporu",id:"Rapor Kimliği",share:"Paylaşım Kiml
 info:"RAPOR BİLGİLERİ",press:"HESAPLANAN BASINÇ",inp:"GİRİŞ PARAMETRELERİ",model:"Model Bilgisi",date:"Hesaplama Tarihi",created:"Paylaşım Tarihi",
 mb:"Max BAR (Silindir)",ins:"Instruction (Tork Talimatı)",kn:"Max kN·Nm (Ekipman)",casH:"KASET VE LOKMA BİLGİLERİ",cylH:"SİLİNDİR BİLGİLERİ",casT:"Kaset Tipi",cylT:"Silindir Tipi",
 af:"Lokma Ölçüsü (A/F)",met:"Silindir Boyutu (Metrik)",tech:"TEKNİSYEN BİLGİLERİ",by:"Hesaplamayı Yapan",verified:"Doğrulama kodu geçerli",ck:"Doğrulama Kodu",
-count:"hesaplama paylaşıldı",all:"Tüm Hesaplamaları PDF Olarak İndir",one:"Bu hesaplamayı PDF indir",prog:"PDF hazırlanıyor",done:"Tamamlandı – ZIP indirildi",
+count:"hesaplama paylaşıldı",all:"Tüm Hesaplamaları PDF Olarak İndir",one:"Bu hesaplamayı PDF indir",prog:"PDF hazırlanıyor",done:"Tamamlandı – PDF indirildi",
 errT:"Rapor açılamadı",errB:"Bu bağlantı geçerli bir rapor içermiyor, eksik veya bozulmuş. Lütfen QR kodu yeniden okutun.",
 old:"Tarayıcınız bu bağlantıyı açmak için çok eski. Lütfen tarayıcıyı güncelleyin.",skipped:"bozuk kayıt atlandı",
 note:"Bu rapor bilgilendirme amaçlıdır. Resmi onaylı veya sertifikalı bir mühendislik belgesi değildir. Veriler QR bağlantısının içindedir; sunucuda saklanmaz.",
@@ -51,7 +51,7 @@ en:{title:"Calculation Report",id:"Report ID",share:"Share ID",name:"Report Name
 info:"REPORT INFORMATION",press:"CALCULATED PRESSURE",inp:"INPUT PARAMETERS",model:"Model",date:"Calculation Date",created:"Shared On",
 mb:"Max BAR (Cylinder)",ins:"Instruction (Torque)",kn:"Max kN·Nm (Equipment)",casH:"CASSETTE & SOCKET INFORMATION",cylH:"CYLINDER INFORMATION",casT:"Cassette Type",cylT:"Cylinder Type",
 af:"Socket Size (A/F)",met:"Cylinder Size (Metric)",tech:"TECHNICIAN INFORMATION",by:"Calculated by",verified:"Verification code valid",ck:"Verification Code",
-count:"calculations shared",all:"Download All Calculations as PDF",one:"Download this calculation as PDF",prog:"Preparing PDFs",done:"Done – ZIP downloaded",
+count:"calculations shared",all:"Download All Calculations as PDF",one:"Download this calculation as PDF",prog:"Preparing PDFs",done:"Done – PDF downloaded",
 errT:"Report cannot be opened",errB:"This link does not contain a valid report; it is incomplete or damaged. Please scan the QR code again.",
 old:"Your browser is too old to open this link. Please update it.",skipped:"damaged record skipped",
 note:"This report is informational only and is not an officially approved or certified engineering document. The data is carried inside the QR link and is not stored on a server.",
@@ -60,7 +60,7 @@ de:{title:"Berechnungsbericht",id:"Berichts-ID",share:"Freigabe-ID",name:"Berich
 info:"BERICHTSINFORMATIONEN",press:"BERECHNETER DRUCK",inp:"EINGABEPARAMETER",model:"Modell",date:"Berechnungsdatum",created:"Geteilt am",
 mb:"Max BAR (Zylinder)",ins:"Instruction (Drehmoment)",kn:"Max kN·Nm (Ausrüstung)",casH:"KASSETTEN- UND NUSSINFORMATIONEN",cylH:"ZYLINDERINFORMATIONEN",casT:"Kassettentyp",cylT:"Zylindertyp",
 af:"Nussgröße (A/F)",met:"Zylindergröße (metrisch)",tech:"TECHNIKERINFORMATIONEN",by:"Berechnet von",verified:"Prüfcode gültig",ck:"Prüfcode",
-count:"Berechnungen geteilt",all:"Alle Berechnungen als PDF herunterladen",one:"Diese Berechnung als PDF laden",prog:"PDFs werden erstellt",done:"Fertig – ZIP heruntergeladen",
+count:"Berechnungen geteilt",all:"Alle Berechnungen als PDF herunterladen",one:"Diese Berechnung als PDF laden",prog:"PDFs werden erstellt",done:"Fertig – PDF heruntergeladen",
 errT:"Bericht kann nicht geöffnet werden",errB:"Dieser Link enthält keinen gültigen Bericht; er ist unvollständig oder beschädigt. Bitte QR-Code erneut scannen.",
 old:"Ihr Browser ist zu alt für diesen Link. Bitte aktualisieren.",skipped:"beschädigter Eintrag übersprungen",
 note:"Dieser Bericht dient nur der Information und ist kein amtlich genehmigtes oder zertifiziertes Dokument. Die Daten stehen im QR-Link und werden nicht auf einem Server gespeichert.",
@@ -120,11 +120,11 @@ function render(skipped){
   document.querySelectorAll("button.sec").forEach(x=>x.onclick=()=>downloadOne(+x.dataset.i,x))}
 function fail(m){$("app").innerHTML=`<header><h1>Hydraulic Pressure Calculator</h1></header><div class="err"><h1>${T.errT}</h1><p>${m==="old"?T.old:T.errB}</p></div>`}
 
-/* ---------- PDF (one A4 page per calculation) ---------- */
+/* ---------- PDF (one merged PDF, one A4 page per calculation) ---------- */
 const PW=595,PH=842,SC=2.2;
 function fit(ctx,text,maxW,size,bold){let s=size;ctx.font=(bold?"bold ":"")+s+"px Arial,Helvetica,sans-serif";while(ctx.measureText(text).width>maxW&&s>7){s-=.5;ctx.font=(bold?"bold ":"")+s+"px Arial,Helvetica,sans-serif"}
   if(ctx.measureText(text).width>maxW){while(text.length>1&&ctx.measureText(text+"…").width>maxW)text=text.slice(0,-1);text+="…"}return text}
-function pageCanvas(f,idx,total){
+function pageCanvas(f,idx,total,withQr){
   const cv=document.createElement("canvas");cv.width=Math.round(PW*SC);cv.height=Math.round(PH*SC);
   const c=cv.getContext("2d");c.scale(SC,SC);c.fillStyle="#fff";c.fillRect(0,0,PW,PH);
   const cas=f.T==="CASSETTE",M=40,W=PW-2*M;let y=0;
@@ -136,69 +136,61 @@ function pageCanvas(f,idx,total){
   const kv=(k,v)=>{if(!v)return;c.fillStyle="#5b6b8c";c.font="10.5px Arial,sans-serif";c.fillText(k,M+2,y);c.fillStyle="#14213d";c.textAlign="right";
     const t=fit(c,String(v),W-190,10.5,true);c.fillText(t,M+W-2,y);c.textAlign="left";c.fillStyle="#e3e9f5";c.fillRect(M,y+5,W,.7);y+=18};
   head(T.info.toUpperCase?T.info:T.info);
-  kv(T.id,f.ID);kv(T.name,f.RN);if(f.T)kv(T.type,cas?T.cas:T.cyl);kv(T.date,fmt(f.CALC));kv(T.model,f.M);y+=6;
+  kv(T.share,SID);kv(T.id,f.ID);kv(T.name,f.RN);if(f.T)kv(T.type,cas?T.cas:T.cyl);kv(T.date,fmt(f.CALC));kv(T.model,f.M);y+=6;
   head(T.press);c.fillStyle="#e8f0ff";c.fillRect(M,y-4,W,50);c.fillStyle="#0b3d91";c.textAlign="center";
   c.font="bold 30px Arial,sans-serif";c.fillText((f.BAR||"")+" BAR",PW/2,y+30);c.textAlign="left";y+=62;
   if(f.MB||f.IN||f.KN){head(T.inp);if(f.MB)kv(T.mb,num(f.MB)+" BAR");if(f.IN)kv(T.ins,num(f.IN)+" kN·Nm");if(f.KN)kv(T.kn,num(f.KN)+" kN·Nm");y+=6}
   if(f.T&&f.S){head(cas?T.casH:T.cylH);kv(cas?T.casT:T.cylT,f.ET);kv(cas?T.af:T.met,f.S);y+=6}
   if(f.TN){head(T.tech);kv(T.by,f.TN+(f.TI?" ("+f.TI+")":""));y+=6}
-  // QR block anchored to the bottom of the page
+  // bottom block: QR only on the first page of a merged PDF; other pages carry the shared ID
   const q=118,qy=PH-q-70;
-  c.fillStyle="#0b3d91";c.font="bold 11px Arial,sans-serif";c.fillText("QR / "+T.id,M,qy-10);c.fillRect(M,qy-6,W,1.5);
-  c.fillStyle="#fff";c.fillRect(M,qy,q,q);c.strokeStyle="#d5def0";c.strokeRect(M,qy,q,q);
-  try{const qr=qrcode(0,"L");qr.addData(location.href);qr.make();const n=qr.getModuleCount(),cell=(q-8)/(n+8);
-    c.fillStyle="#000";for(let r=0;r<n;r++)for(let k=0;k<n;k++)if(qr.isDark(r,k))c.fillRect(M+4+cell*4+k*cell,qy+4+cell*4+r*cell,cell+.25,cell+.25)}catch(e){}
-  const tx=M+q+16;c.fillStyle="#5b6b8c";c.font="10px Arial,sans-serif";c.fillText(T.id,tx,qy+14);
-  c.fillStyle="#14213d";c.font=fit(c,f.ID,W-q-16,11,true);c.fillText(f.ID,tx,qy+30);
-  c.fillStyle="#5b6b8c";c.font="10px Arial,sans-serif";c.fillText(T.share,tx,qy+52);c.fillStyle="#14213d";c.font="bold 11px Arial,sans-serif";c.fillText(SID,tx,qy+68);
-  c.fillStyle="#5b6b8c";c.font="10px Arial,sans-serif";c.fillText(T.ck,tx,qy+90);c.fillStyle="#0a7a3b";c.font="bold 11px Arial,sans-serif";c.fillText(f._ck+"  ✔",tx,qy+106);
+  c.fillStyle="#0b3d91";c.font="bold 11px Arial,sans-serif";c.fillText((withQr?"QR / ":"")+T.share,M,qy-10);c.fillRect(M,qy-6,W,1.5);
+  let tx=M;
+  if(withQr){
+    c.fillStyle="#fff";c.fillRect(M,qy,q,q);c.strokeStyle="#d5def0";c.strokeRect(M,qy,q,q);
+    try{const qr=qrcode(0,"L");qr.addData(location.href);qr.make();const n=qr.getModuleCount(),cell=(q-8)/(n+8);
+      c.fillStyle="#000";for(let r=0;r<n;r++)for(let k=0;k<n;k++)if(qr.isDark(r,k))c.fillRect(M+4+cell*4+k*cell,qy+4+cell*4+r*cell,cell+.25,cell+.25)}catch(e){}
+    tx=M+q+16}
+  c.fillStyle="#5b6b8c";c.font="10px Arial,sans-serif";c.fillText(T.share,tx,qy+14);
+  c.fillStyle="#14213d";c.font="bold 13px Arial,sans-serif";c.fillText(SID,tx,qy+31);
+  c.fillStyle="#5b6b8c";c.font="10px Arial,sans-serif";c.fillText(T.id,tx,qy+52);
+  c.fillStyle="#14213d";c.font=fit(c,f.ID,W-(tx-M),11,true);c.fillText(f.ID,tx,qy+68);
+  c.fillStyle="#5b6b8c";c.font="10px Arial,sans-serif";c.fillText(T.ck,tx,qy+90);c.fillStyle="#0a7a3b";c.font="bold 11px Arial,sans-serif";c.fillText(f._ck+"  \u2714",tx,qy+106);
   // footer note (wrapped)
   c.fillStyle="#5b6b8c";c.font="8.5px Arial,sans-serif";const words=T.note.split(" ");let line="",ny=PH-44;
   for(const w of words){const t=line?line+" "+w:w;if(c.measureText(t).width>W){c.fillText(line,M,ny);ny+=11;line=w}else line=t}c.fillText(line,M,ny);
   return cv}
 const enc=new TextEncoder();
 function cat(parts){let n=0;parts.forEach(p=>n+=p.length);const o=new Uint8Array(n);let k=0;parts.forEach(p=>{o.set(p,k);k+=p.length});return o}
-async function makePdf(f,idx,total){
-  const cv=pageCanvas(f,idx,total);
-  const jpg=new Uint8Array(await new Promise(r=>cv.toBlob(b=>b.arrayBuffer().then(r),"image/jpeg",.92)));
-  const objs=[];const parts=[];let off=0;const offs=[];
+async function makePdf(items){
+  // items: [{f,idx,total,qr}] -> one PDF, one A4 page per item
+  const jpgs=[];
+  for(const it of items){const cv=pageCanvas(it.f,it.idx,it.total,it.qr);
+    jpgs.push({w:cv.width,h:cv.height,d:new Uint8Array(await new Promise(r=>cv.toBlob(bl=>bl.arrayBuffer().then(r),"image/jpeg",.92)))});
+    await new Promise(r=>setTimeout(r,0))}
+  const N=jpgs.length,parts=[],offs=[];let off=0;
   const push=u=>{parts.push(u);off+=u.length};
   push(enc.encode("%PDF-1.4\n"));
   const o=(n,body)=>{offs[n]=off;push(enc.encode(n+" 0 obj\n"));push(typeof body==="string"?enc.encode(body):body);push(enc.encode("\nendobj\n"))};
-  o(1,"<< /Type /Catalog /Pages 2 0 R >>");o(2,"<< /Type /Pages /Kids [3 0 R] /Count 1 >>");
-  o(3,"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /XObject << /Im0 4 0 R >> >> /Contents 5 0 R >>");
-  o(4,cat([enc.encode(`<< /Type /XObject /Subtype /Image /Width ${cv.width} /Height ${cv.height} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${jpg.length} >>\nstream\n`),jpg,enc.encode("\nendstream")]));
-  const cs="q 595.28 0 0 841.89 0 0 cm /Im0 Do Q";o(5,`<< /Length ${cs.length} >>\nstream\n${cs}\nendstream`);
-  const xr=off;let x="xref\n0 6\n0000000000 65535 f \n";for(let i=1;i<=5;i++)x+=String(offs[i]).padStart(10,"0")+" 00000 n \n";
-  x+=`trailer\n<< /Size 6 /Root 1 0 R >>\nstartxref\n${xr}\n%%EOF`;push(enc.encode(x));
+  o(1,"<< /Type /Catalog /Pages 2 0 R >>");
+  o(2,"<< /Type /Pages /Kids ["+jpgs.map((_,i)=>(3+3*i)+" 0 R").join(" ")+"] /Count "+N+" >>");
+  jpgs.forEach((j,i)=>{const p=3+3*i;
+    o(p,"<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /XObject << /Im0 "+(p+1)+" 0 R >> >> /Contents "+(p+2)+" 0 R >>");
+    o(p+1,cat([enc.encode(`<< /Type /XObject /Subtype /Image /Width ${j.w} /Height ${j.h} /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length ${j.d.length} >>\nstream\n`),j.d,enc.encode("\nendstream")]));
+    const cs="q 595.28 0 0 841.89 0 0 cm /Im0 Do Q";o(p+2,`<< /Length ${cs.length} >>\nstream\n${cs}\nendstream`)});
+  const xr=off,cnt=3+3*N;let x="xref\n0 "+cnt+"\n0000000000 65535 f \n";for(let i=1;i<cnt;i++)x+=String(offs[i]).padStart(10,"0")+" 00000 n \n";
+  x+=`trailer\n<< /Size ${cnt} /Root 1 0 R >>\nstartxref\n${xr}\n%%EOF`;push(enc.encode(x));
   return cat(parts)}
 function fname(f,i){const t=f.T==="CASSETTE"?"Cassette":f.T==="CYLINDER"?"Cylinder":"Report";
   return (String(i+1).padStart(2,"0")+"_"+t+"_"+(f.S||"")+"_"+(f.BAR||"")+"BAR_"+f.ID.slice(-8)+".pdf").replace(/[^A-Za-z0-9._-]+/g,"-").replace(/-+/g,"-")}
-let CT=null;function crc(b){if(!CT){CT=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=c&1?0xEDB88320^(c>>>1):c>>>1;CT[n]=c>>>0}}
-  let c=~0;for(let i=0;i<b.length;i++)c=CT[(c^b[i])&255]^(c>>>8);return(~c)>>>0}
-function zip(files){
-  const now=new Date(),dt=((now.getFullYear()-1980)<<9|(now.getMonth()+1)<<5|now.getDate())&0xffff,tm=(now.getHours()<<11|now.getMinutes()<<5|now.getSeconds()>>1)&0xffff;
-  const out=[],cen=[];let off=0;
-  for(const f of files){const nm=enc.encode(f.name),c=crc(f.data),h=new DataView(new ArrayBuffer(30));
-    h.setUint32(0,0x04034b50,true);h.setUint16(4,20,true);h.setUint16(6,0x0800,true);h.setUint16(8,0,true);h.setUint16(10,tm,true);h.setUint16(12,dt,true);
-    h.setUint32(14,c,true);h.setUint32(18,f.data.length,true);h.setUint32(22,f.data.length,true);h.setUint16(26,nm.length,true);h.setUint16(28,0,true);
-    out.push(new Uint8Array(h.buffer),nm,f.data);
-    const g=new DataView(new ArrayBuffer(46));g.setUint32(0,0x02014b50,true);g.setUint16(4,20,true);g.setUint16(6,20,true);g.setUint16(8,0x0800,true);g.setUint16(10,0,true);
-    g.setUint16(12,tm,true);g.setUint16(14,dt,true);g.setUint32(16,c,true);g.setUint32(20,f.data.length,true);g.setUint32(24,f.data.length,true);g.setUint16(28,nm.length,true);g.setUint32(42,off,true);
-    cen.push(new Uint8Array(g.buffer),nm);off+=30+nm.length+f.data.length}
-  const cl=cen.reduce((a,b)=>a+b.length,0),e=new DataView(new ArrayBuffer(22));
-  e.setUint32(0,0x06054b50,true);e.setUint16(8,files.length,true);e.setUint16(10,files.length,true);e.setUint32(12,cl,true);e.setUint32(16,off,true);
-  return new Blob([...out,...cen,new Uint8Array(e.buffer)],{type:"application/zip"})}
 function save(blob,name){const u=URL.createObjectURL(blob),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();
   setTimeout(()=>{a.remove();URL.revokeObjectURL(u)},4000)}
-async function downloadOne(i,btn){btn.disabled=true;try{const d=await makePdf(ENTRIES[i],i,ENTRIES.length);save(new Blob([d],{type:"application/pdf"}),fname(ENTRIES[i],i))}finally{btn.disabled=false}}
+async function downloadOne(i,btn){btn.disabled=true;try{const d=await makePdf([{f:ENTRIES[i],idx:i,total:ENTRIES.length,qr:true}]);save(new Blob([d],{type:"application/pdf"}),fname(ENTRIES[i],i))}finally{btn.disabled=false}}
 async function downloadAll(){
-  const btn=$("allBtn"),bar=$("bar"),bi=$("barI"),pt=$("pt");btn.disabled=true;bar.style.display="block";bi.style.width="0";
-  try{const files=[];
-    for(let i=0;i<ENTRIES.length;i++){pt.textContent=T.prog+" "+(i+1)+"/"+ENTRIES.length;await new Promise(r=>setTimeout(r,30));
-      files.push({name:fname(ENTRIES[i],i),data:await makePdf(ENTRIES[i],i,ENTRIES.length)});bi.style.width=Math.round((i+1)/ENTRIES.length*90)+"%"}
-    pt.textContent="ZIP…";await new Promise(r=>setTimeout(r,30));
-    save(zip(files),"HPC-"+SID+".zip");bi.style.width="100%";pt.textContent=T.done;
+  const btn=$("allBtn"),bar=$("bar"),bi=$("barI"),pt=$("pt");btn.disabled=true;bar.style.display="block";bi.style.width="10%";pt.textContent=T.prog+" ("+ENTRIES.length+")";
+  try{await new Promise(r=>setTimeout(r,30));
+    const d=await makePdf(ENTRIES.map((f,i)=>({f,idx:i,total:ENTRIES.length,qr:i===0})));
+    save(new Blob([d],{type:"application/pdf"}),"HPC-"+SID+".pdf");bi.style.width="100%";pt.textContent=T.done;
   }catch(e){pt.textContent="Error: "+e}finally{btn.disabled=false}}
 
 load().then(render).catch(e=>fail(e));

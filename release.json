@@ -1,9 +1,9 @@
 {
-  "versionCode": 33,
-  "versionName": "1.32",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.32/Hydraulic-Pressure-Calculator-1.32.apk",
-  "sha256": "a0ed774a13ff02192181dad9a94130d897651b1057375d235f53a55efa9d9d95",
-  "releaseDate": "2026-11-23T19:23:31Z",
+  "versionCode": 34,
+  "versionName": "1.33",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.33/Hydraulic-Pressure-Calculator-1.33.apk",
+  "sha256": "b38e1ef4ff719247fe9e46afcd11167a349472035f36aef1307b98e7689e54f4",
+  "releaseDate": "2026-11-23T19:25:50Z",
   "releaseNotes": "Kaset (A/F lokma) ve Silindir (metrik saplama) ölçü girişi; geçmiş ve PDF raporuna işlenir.",
   "releaseNotesEn": "Cassette (A/F socket) and Cylinder (metric stud) size input; stored in history and PDF report.",
   "minimumSupportedVersionCode": 0

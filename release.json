@@ -1,10 +1,10 @@
 {
-  "versionCode": 44,
-  "versionName": "1.43",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.43/Hydraulic-Pressure-Calculator-1.43.apk",
-  "sha256": "129cd45128bde271742e77822eb37c0c7fb5de425285d50f93f000b5ff1749c1",
-  "releaseDate": "2026-11-23T21:00:45Z",
-  "releaseNotes": "PDF raporunun Hesaplama Özeti bölümünde modelin yanında kullanılan lokma/silindir ölçüsü gösterilir.",
-  "releaseNotesEn": "The PDF report's Calculation Summary now shows the socket/cylinder size next to the model.",
+  "versionCode": 45,
+  "versionName": "1.44",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.44/Hydraulic-Pressure-Calculator-1.44.apk",
+  "sha256": "cfcba533ac0e6c6e379e462f5b88899630f51d97777a117db582af5cbf6d062d",
+  "releaseDate": "2026-11-23T21:08:00Z",
+  "releaseNotes": "Lokma ölçüleri raporlarda ve web sayfasında A/F 41 biçiminde gösterilir.",
+  "releaseNotesEn": "Socket sizes are shown as A/F 41 in reports and on the web page.",
   "minimumSupportedVersionCode": 0
 }

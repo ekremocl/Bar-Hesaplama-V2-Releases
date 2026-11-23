@@ -1,10 +1,10 @@
 {
-  "versionCode": 31,
-  "versionName": "1.30",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.30/Hydraulic-Pressure-Calculator-1.30.apk",
-  "sha256": "efa26aea49a5751cfb5ffd8f968a94d3c783e506c7c6b7d848887e82bedb7d0c",
-  "releaseDate": "2026-11-23T18:56:55Z",
-  "releaseNotes": "Menüdeki teknisyen adı, soyadı ve ID alanı durum çubuğunun altına taşındı.",
-  "releaseNotesEn": "Technician name and ID in the menu moved below the status bar.",
+  "versionCode": 32,
+  "versionName": "1.31",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.31/Hydraulic-Pressure-Calculator-1.31.apk",
+  "sha256": "9067eefffdf7a835092dcab3c95fb2f180868aefb3cb90b32ae9c9739e2b162d",
+  "releaseDate": "2026-11-23T19:07:44Z",
+  "releaseNotes": "PDF oluştururken rapor adı girilir; PDF başlığında, dosya adında ve geçmiş kaydında görünür.",
+  "releaseNotesEn": "A report name is entered when creating a PDF; shown as title, in the file name and in history.",
   "minimumSupportedVersionCode": 0
 }

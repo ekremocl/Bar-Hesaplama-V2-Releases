@@ -1,10 +1,10 @@
 {
-  "versionCode": 47,
-  "versionName": "1.46",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.46/Hydraulic-Pressure-Calculator-1.46.apk",
-  "sha256": "1a66bf4d703bb4d36b86d2567bfacf4ccd09301cd64665e7220d57e188807734",
-  "releaseDate": "2026-11-23T21:15:49Z",
-  "releaseNotes": "QR kodu özelliği uygulamadan tamamen kaldırıldı. PDF raporları QR kodsuz oluşturulur ve paylaşılır.",
-  "releaseNotesEn": "The QR code feature was removed completely. PDF reports are created and shared without a QR code.",
+  "versionCode": 48,
+  "versionName": "1.47",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.47/Hydraulic-Pressure-Calculator-1.47.apk",
+  "sha256": "6a5d7a11fa47cff90b52fcd0d820d34a896b58056998327668c106cd8deea08b",
+  "releaseDate": "2026-11-23T21:21:58Z",
+  "releaseNotes": "Teknisyen ID ve Hesaplamayı Yapan bölümü ikinci sayfaya taşmadan tek sayfaya sığdırıldı.",
+  "releaseNotesEn": "Technician ID and Calculated by now fit on a single report page.",
   "minimumSupportedVersionCode": 0
 }

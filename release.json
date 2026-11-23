@@ -1,10 +1,10 @@
 {
-  "versionCode": 42,
-  "versionName": "1.41",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.41/Hydraulic-Pressure-Calculator-1.41.apk",
-  "sha256": "955303eb7d1e0506e4f7eebf1dc045919d5da3555db5b23023e5edd5c07e5d4c",
-  "releaseDate": "2026-11-23T20:44:28Z",
-  "releaseNotes": "Toplu paylaşım: Tüm hesaplamalar artık tek bir PDF olarak iniyor (QR yalnızca ilk sayfada).",
-  "releaseNotesEn": "Bulk sharing: all calculations now download as a single PDF (QR on first page only).",
+  "versionCode": 43,
+  "versionName": "1.42",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.42/Hydraulic-Pressure-Calculator-1.42.apk",
+  "sha256": "c6c0c139c7e686c6e66c27f830e46ca6c656e161ae3b7f777576b8e2355c2ce1",
+  "releaseDate": "2026-11-23T20:58:19Z",
+  "releaseNotes": "Paylaşım QR kodu özelliği kaldırıldı. Raporları PDF olarak kaydedip paylaşmaya devam edebilirsiniz.",
+  "releaseNotesEn": "The share QR code feature was removed. You can still save and share reports as PDF.",
   "minimumSupportedVersionCode": 0
 }

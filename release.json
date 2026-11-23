@@ -1,10 +1,10 @@
 {
-  "versionCode": 27,
-  "versionName": "1.26",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.26/Hydraulic-Pressure-Calculator-1.26.apk",
-  "sha256": "f5710b7898f9da9b42dbd111a158114e85a9ee1e52fe584f1fb17f6fba6055dd",
-  "releaseDate": "2026-11-23T18:26:45Z",
-  "releaseNotes": "Hesaplama Geçmişi penceresine PDF çıktısı butonu eklendi: tüm kayıtlar tek PDF'de alınır, tek tek rapor için kayda dokunulur.",
-  "releaseNotesEn": "Added a PDF export button to Calculation History: all records in one PDF, or tap a record for a single report.",
+  "versionCode": 28,
+  "versionName": "1.27",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.27/Hydraulic-Pressure-Calculator-1.27.apk",
+  "sha256": "56b7a82049b09f88d52905bac598db45a0602ed755de01b4cbe1b082f5bd76b6",
+  "releaseDate": "2026-11-23T18:38:19Z",
+  "releaseNotes": "Teknisyen bilgileri eklendi: ilk PDF raporunda ad/soyad istenir, raporlara ve geçmiş kayıtlarına işlenir.",
+  "releaseNotesEn": "Added technician details: asked on first PDF report, shown in reports and history.",
   "minimumSupportedVersionCode": 0
 }

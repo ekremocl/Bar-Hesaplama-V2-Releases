@@ -1,10 +1,10 @@
 {
-  "versionCode": 43,
-  "versionName": "1.42",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.42/Hydraulic-Pressure-Calculator-1.42.apk",
-  "sha256": "c6c0c139c7e686c6e66c27f830e46ca6c656e161ae3b7f777576b8e2355c2ce1",
-  "releaseDate": "2026-11-23T20:58:19Z",
-  "releaseNotes": "Paylaşım QR kodu özelliği kaldırıldı. Raporları PDF olarak kaydedip paylaşmaya devam edebilirsiniz.",
-  "releaseNotesEn": "The share QR code feature was removed. You can still save and share reports as PDF.",
+  "versionCode": 44,
+  "versionName": "1.43",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.43/Hydraulic-Pressure-Calculator-1.43.apk",
+  "sha256": "129cd45128bde271742e77822eb37c0c7fb5de425285d50f93f000b5ff1749c1",
+  "releaseDate": "2026-11-23T21:00:45Z",
+  "releaseNotes": "PDF raporunun Hesaplama Özeti bölümünde modelin yanında kullanılan lokma/silindir ölçüsü gösterilir.",
+  "releaseNotesEn": "The PDF report's Calculation Summary now shows the socket/cylinder size next to the model.",
   "minimumSupportedVersionCode": 0
 }

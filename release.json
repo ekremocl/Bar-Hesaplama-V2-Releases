@@ -1,10 +1,10 @@
 {
-  "versionCode": 38,
-  "versionName": "1.37",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.37/Hydraulic-Pressure-Calculator-1.37.apk",
-  "sha256": "c3f427d23b5d6530166d0924264260fd92b84a8fe11f75309463c13f1fbc48f5",
-  "releaseDate": "2026-11-23T19:56:18Z",
-  "releaseNotes": "Rapor QR kodu düzeltildi (telefon/kişi olarak algılanmıyor); menüden QR Rapor Oku ile rapor eksiksiz açılır.",
-  "releaseNotesEn": "Report QR fixed (no longer detected as phone/contact); Scan Report QR in the menu opens the full report.",
+  "versionCode": 39,
+  "versionName": "1.38",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.38/Hydraulic-Pressure-Calculator-1.38.apk",
+  "sha256": "4ca657c9dbc9c102f51cdbf454f4fe9e207de4c054df6051af901ac881e2e75c",
+  "releaseDate": "2026-11-23T20:06:38Z",
+  "releaseNotes": "QR kodlar artık HTTPS bağlantısı: kamerayla okutunca rapor tarayıcıda açılır. Uygulama içi QR okuyucu kaldırıldı.",
+  "releaseNotesEn": "QR codes now hold an HTTPS link: scanning opens the report in the browser. In-app QR reader removed.",
   "minimumSupportedVersionCode": 0
 }

@@ -1,10 +1,10 @@
 {
-  "versionCode": 29,
-  "versionName": "1.28",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.28/Hydraulic-Pressure-Calculator-1.28.apk",
-  "sha256": "570ae731712eaafc58ab6e83297065c86eb4c7984548f437b3216892d6ea0910",
-  "releaseDate": "2026-11-23T18:47:45Z",
-  "releaseNotes": "Teknisyen profili: ilk açılışta profil oluşturma, menüde karşılama, PDF'de kendi profil veya başka teknisyen seçimi.",
-  "releaseNotesEn": "Technician profile: first-launch setup, menu greeting, choose own or another technician for PDFs.",
+  "versionCode": 30,
+  "versionName": "1.29",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.29/Hydraulic-Pressure-Calculator-1.29.apk",
+  "sha256": "1ff4a83d89e4c1d81f1b10c5c75bfd91fa0242422215ec67bb9d08a2d3309e16",
+  "releaseDate": "2026-11-23T18:51:46Z",
+  "releaseNotes": "Güncelleme denetimi iyileştirildi: uygulama arka plandan açıldığında da yeni sürüm hemen kontrol edilir.",
+  "releaseNotesEn": "Improved update check: new versions are detected immediately when the app is reopened from the background.",
   "minimumSupportedVersionCode": 0
 }

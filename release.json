@@ -1,10 +1,10 @@
 {
-  "versionCode": 21,
-  "versionName": "1.20",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.20/Hydraulic-Pressure-Calculator-1.20.apk",
-  "sha256": "e3a72f7aecf9b4813e7a9a4f29c3083ce3b81558a1aa903756981396403dd84a",
-  "releaseDate": "2026-11-23T17:30:30Z",
-  "releaseNotes": "Teknik Dokümantasyon'a D4K Alignment ve D3K Alignment PDF'leri eklendi. Menü sıralaması ve kararlılık iyileştirmeleri.",
-  "releaseNotesEn": "Added D4K Alignment and D3K Alignment PDFs to Technical Documentation. Menu ordering and stability improvements.",
+  "versionCode": 22,
+  "versionName": "1.21",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.21/Hydraulic-Pressure-Calculator-1.21.apk",
+  "sha256": "7c1a9106e044a0391d120a90768b3b9b138ecb620a6d01f3bd14dfb78c16205a",
+  "releaseDate": "2026-11-23T17:43:37Z",
+  "releaseNotes": "D4K ve D3K Alignment PDF'leri ITH Tork Chart'ın üstüne alındı. Menüde uzun doküman adları (ör. Tower Information IMC4016) artık tam görünüyor.",
+  "releaseNotesEn": "Moved D4K and D3K Alignment PDFs above ITH Tork Chart. Long document names in the menu (e.g. Tower Information IMC4016) are now fully shown.",
   "minimumSupportedVersionCode": 0
 }

@@ -1,10 +1,10 @@
 {
-  "versionCode": 59,
-  "versionName": "1.58",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.58/Hydraulic-Pressure-Calculator-1.58.apk",
-  "sha256": "bc0df61ddbba5df1cd1e3274ebf17c7cfd64e79d0ef843f3048742d78ea6c5a2",
-  "releaseDate": "2026-11-24T20:20:38Z",
-  "releaseNotes": "ZIP simgesi guncellendi",
-  "releaseNotesEn": "ZIP icon updated",
+  "versionCode": 60,
+  "versionName": "1.59",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.59/Hydraulic-Pressure-Calculator-1.59.apk",
+  "sha256": "4bf328a32c348cb8a7ff44e59fa4ae5149980202fb460e7b8c799afa7081e45b",
+  "releaseDate": "2026-11-24T20:29:19Z",
+  "releaseNotes": "PDF okuyucuya kamera dugmesi: gorunen sayfayi PNG/JPG olarak galeriye kaydet veya paylas.",
+  "releaseNotesEn": "PDF viewer camera button: save the current page as PNG/JPG to the gallery or share it.",
   "minimumSupportedVersionCode": 0
 }

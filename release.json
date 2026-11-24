@@ -1,10 +1,10 @@
 {
-  "versionCode": 60,
-  "versionName": "1.59",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.59/Hydraulic-Pressure-Calculator-1.59.apk",
-  "sha256": "4bf328a32c348cb8a7ff44e59fa4ae5149980202fb460e7b8c799afa7081e45b",
-  "releaseDate": "2026-11-24T20:29:19Z",
-  "releaseNotes": "PDF okuyucuya kamera dugmesi: gorunen sayfayi PNG/JPG olarak galeriye kaydet veya paylas.",
-  "releaseNotesEn": "PDF viewer camera button: save the current page as PNG/JPG to the gallery or share it.",
+  "versionCode": 61,
+  "versionName": "1.60",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.60/Hydraulic-Pressure-Calculator-1.60.apk",
+  "sha256": "d24e55eb04d02a20b4a1ba12321634d64f1bd8736a9920153d7cd2630ff41bd7",
+  "releaseDate": "2026-11-24T20:54:26Z",
+  "releaseNotes": "Resimden PDF'ye Donusturucu: JPG/PNG gorselleri tek PDF'de birlestir, ada karar ver, kaydet/paylas/Benim Dokumanlarima ekle.",
+  "releaseNotesEn": "Image to PDF Converter: merge JPG/PNG images into one PDF, choose the name, save/share/add to My Documents.",
   "minimumSupportedVersionCode": 0
 }

@@ -1,10 +1,10 @@
 {
-  "versionCode": 49,
-  "versionName": "1.48",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.48/Hydraulic-Pressure-Calculator-1.48.apk",
-  "sha256": "9aa31c2b7e66e013dbb803facf23b6f6606ca59e6a95c71d6790718c908364d6",
-  "releaseDate": "2026-11-23T21:29:27Z",
-  "releaseNotes": "PDF raporlarındaki bozuk Türkçe karakterler düzeltildi.",
-  "releaseNotesEn": "Fixed garbled Turkish characters in PDF reports.",
+  "versionCode": 50,
+  "versionName": "1.49",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.49/Hydraulic-Pressure-Calculator-1.49.apk",
+  "sha256": "2718b75b9dbbc4464a93f11b0e684ed0a380d8eab8fefabd6d8a5a101fa8654e",
+  "releaseDate": "2026-11-24T09:16:08Z",
+  "releaseNotes": "PDF'li Silindir/Kaset: bar katsayisi otomatik, Instruction x katsayi, basamak siniri, iki hesapta ortalama.",
+  "releaseNotesEn": "PDF Cylinder/Cassette: automatic bar coefficient, Instruction x coefficient, digit limits, centered two-entry history.",
   "minimumSupportedVersionCode": 0
 }

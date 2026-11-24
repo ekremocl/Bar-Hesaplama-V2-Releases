@@ -1,10 +1,10 @@
 {
-  "versionCode": 50,
-  "versionName": "1.49",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.49/Hydraulic-Pressure-Calculator-1.49.apk",
-  "sha256": "2718b75b9dbbc4464a93f11b0e684ed0a380d8eab8fefabd6d8a5a101fa8654e",
-  "releaseDate": "2026-11-24T09:16:08Z",
-  "releaseNotes": "PDF'li Silindir/Kaset: bar katsayisi otomatik, Instruction x katsayi, basamak siniri, iki hesapta ortalama.",
-  "releaseNotesEn": "PDF Cylinder/Cassette: automatic bar coefficient, Instruction x coefficient, digit limits, centered two-entry history.",
+  "versionCode": 51,
+  "versionName": "1.50",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.50/Hydraulic-Pressure-Calculator-1.50.apk",
+  "sha256": "3c3d9d297bc6c24ef73488d4b3cf250d5a466100068a2084666b90ff9e1a081a",
+  "releaseDate": "2026-11-24T09:25:08Z",
+  "releaseNotes": "PDF ekraninda Silindir icin Max kN, Kaset icin Max Nm yazar.",
+  "releaseNotesEn": "PDF screen shows Max kN for cylinder and Max Nm for cassette.",
   "minimumSupportedVersionCode": 0
 }

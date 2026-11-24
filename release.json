@@ -1,10 +1,10 @@
 {
-  "versionCode": 62,
-  "versionName": "1.61",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.61/Hydraulic-Pressure-Calculator-1.61.apk",
-  "sha256": "6c7ae328d47f939d302a9478a11008eecd24efb889b234517b8c8fb01f45e978",
-  "releaseDate": "2026-11-24T20:58:44Z",
-  "releaseNotes": "Resimden PDF'ye Donusturucu hamburger menuye, Hesaplama Gecmisi'nin ustune tasindi.",
-  "releaseNotesEn": "Image to PDF Converter moved to the menu above Calculation History.",
+  "versionCode": 63,
+  "versionName": "1.62",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.62/Hydraulic-Pressure-Calculator-1.62.apk",
+  "sha256": "2ef9c50721cdb5633c119d47ce0d038eb011921581b4e48180fa35776b8549b6",
+  "releaseDate": "2026-11-24T21:03:42Z",
+  "releaseNotes": "Hesaplama Gecmisi menuden ana ekrana tasindi.",
+  "releaseNotesEn": "Calculation History moved from the menu to the main screen.",
   "minimumSupportedVersionCode": 0
 }

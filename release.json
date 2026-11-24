@@ -1,10 +1,10 @@
 {
-  "versionCode": 69,
-  "versionName": "1.68",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.68/Hydraulic-Pressure-Calculator-1.68.apk",
-  "sha256": "a35094106d92838675f9c60fa0ec32848faf60e8473758589e8e538c68e63e08",
-  "releaseDate": "2026-11-24T21:43:18Z",
-  "releaseNotes": "Hamburger menu islemlerden sonra kapanmiyor.",
-  "releaseNotesEn": "Hamburger menu stays open after actions.",
+  "versionCode": 70,
+  "versionName": "1.69",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.69/Hydraulic-Pressure-Calculator-1.69.apk",
+  "sha256": "2dad0b73bbe2993e8542559811c0849bc3f26e31215c23a1728338c7832d0ec6",
+  "releaseDate": "2026-11-24T21:56:33Z",
+  "releaseNotes": "Silindir ve Kaset basligina ekipman simgesi eklendi.",
+  "releaseNotesEn": "Equipment icon added to Cylinder & Cassette header.",
   "minimumSupportedVersionCode": 0
 }

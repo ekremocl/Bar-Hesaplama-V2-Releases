@@ -1,10 +1,10 @@
 {
-  "versionCode": 72,
-  "versionName": "1.71",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.71/Hydraulic-Pressure-Calculator-1.71.apk",
-  "sha256": "2e2eb0964ae5987f133ad94f74181bd997a9c421cee174093ee752325e9c2e5f",
-  "releaseDate": "2026-11-25T14:47:01Z",
-  "releaseNotes": "Menu simgeleri hizalandi, Silindir/Kaset satirlarina simge eklendi.",
-  "releaseNotesEn": "Menu icons aligned; icons added to Cylinder/Cassette rows.",
+  "versionCode": 73,
+  "versionName": "1.72",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.72/Hydraulic-Pressure-Calculator-1.72.apk",
+  "sha256": "6898c20e2fa13033383ddf0f671aeec1366bb6383f5c417aa42f319dc46527d0",
+  "releaseDate": "2026-11-25T15:03:51Z",
+  "releaseNotes": "Hamburger menu akordiyon yapiya donustu.",
+  "releaseNotesEn": "Hamburger menu is now an accordion.",
   "minimumSupportedVersionCode": 0
 }

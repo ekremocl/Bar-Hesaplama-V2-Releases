@@ -1,10 +1,10 @@
 {
-  "versionCode": 80,
-  "versionName": "1.79",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.79/Hydraulic-Pressure-Calculator-1.79.apk",
-  "sha256": "706fade2b920ed5c6f0da2bbde48b1d5201615b23605df579548480d99bf4b95",
-  "releaseDate": "2026-11-25T16:36:43Z",
-  "releaseNotes": "Saha Araclari aciklamasindan Teknik hesaplama kaldirildi.",
-  "releaseNotesEn": "Removed technical calculation from Field Tools description.",
+  "versionCode": 81,
+  "versionName": "1.80",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.80/Hydraulic-Pressure-Calculator-1.80.apk",
+  "sha256": "f5809a76ca55ae04da0540cb56f74cbd4ab60d1844172afc096f299373f23317",
+  "releaseDate": "2026-11-25T16:56:35Z",
+  "releaseNotes": "Acilista kalibrasyon uyarisi, yeni kategoriler, CSV disa aktarma, menu duzeltmeleri.",
+  "releaseNotesEn": "Startup calibration warning, new categories, CSV export, menu fixes.",
   "minimumSupportedVersionCode": 0
 }

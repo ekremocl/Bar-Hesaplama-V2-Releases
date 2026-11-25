@@ -1,10 +1,10 @@
 {
-  "versionCode": 77,
-  "versionName": "1.76",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.76/Hydraulic-Pressure-Calculator-1.76.apk",
-  "sha256": "6eaaf11d5c9d65f5c819b8adceacb386b0b3889055abbbe79e9f6ea9d87197e4",
-  "releaseDate": "2026-11-25T15:30:47Z",
-  "releaseNotes": "Bilgi simgesi yerlesimi duzeltildi.",
-  "releaseNotesEn": "Info icon layout fixed.",
+  "versionCode": 78,
+  "versionName": "1.77",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.77/Hydraulic-Pressure-Calculator-1.77.apk",
+  "sha256": "01dd6ddd58b80168e60ee74f273d885908226081d8b0b3c9448aa20565041fe9",
+  "releaseDate": "2026-11-25T16:23:31Z",
+  "releaseNotes": "Saha Araclari menusu ve Ekipman ve Kalibrasyon yonetim sistemi eklendi.",
+  "releaseNotesEn": "Added Field Tools menu and Equipment and Calibration management system.",
   "minimumSupportedVersionCode": 0
 }

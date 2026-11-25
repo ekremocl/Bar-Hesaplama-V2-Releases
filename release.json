@@ -1,10 +1,10 @@
 {
-  "versionCode": 75,
-  "versionName": "1.74",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.74/Hydraulic-Pressure-Calculator-1.74.apk",
-  "sha256": "2a864a861c6f8ef53fdfb1d210319af2795114a4a2a7e9a27f5f1d1bcf63e738",
-  "releaseDate": "2026-11-25T15:18:33Z",
-  "releaseNotes": "Hamburger menu alt ogeleri yeniden gorunur.",
-  "releaseNotesEn": "Hamburger menu items visible again.",
+  "versionCode": 76,
+  "versionName": "1.75",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.75/Hydraulic-Pressure-Calculator-1.75.apk",
+  "sha256": "4f9efc8fddff91d31b302181ae8a1967ab56f4c3cf83c9efe7e6d5c27393f9b4",
+  "releaseDate": "2026-11-25T15:24:58Z",
+  "releaseNotes": "Menu basliklarina bilgi simgeleri, hizli gecisler.",
+  "releaseNotesEn": "Info icons on menu headers, faster transitions.",
   "minimumSupportedVersionCode": 0
 }

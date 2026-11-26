@@ -1,10 +1,10 @@
 {
-  "versionCode": 91,
-  "versionName": "1.90",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.90/Hydraulic-Pressure-Calculator-1.90.apk",
-  "sha256": "f3596f65302fbf0d8c077d1c6d6de7c6496654166c0fdc5bb94aa09ea04518cc",
-  "releaseDate": "2026-11-26T17:38:38Z",
-  "releaseNotes": "Ice aktarma gecmisinde toplu silme, ayarlar oku ortalandi",
-  "releaseNotesEn": "Import history bulk delete, settings arrow centred",
+  "versionCode": 92,
+  "versionName": "1.91",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.91/Hydraulic-Pressure-Calculator-1.91.apk",
+  "sha256": "52d39da71c9a360803bfe23c5d25dd54476601e5f05c85c174440afbaa1b300a",
+  "releaseDate": "2026-11-26T17:41:24Z",
+  "releaseNotes": "Excel tarih yil-ay-gun duzeltmesi",
+  "releaseNotesEn": "Excel date year-month-day fix",
   "minimumSupportedVersionCode": 0
 }

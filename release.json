@@ -1,10 +1,10 @@
 {
-  "versionCode": 85,
-  "versionName": "1.84",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.84/Hydraulic-Pressure-Calculator-1.84.apk",
-  "sha256": "ef71ad9fc239407f5fec7b374c6f74b7b5b59abbe628c0f3ba5f4a5f54d2f2dc",
-  "releaseDate": "2026-11-26T16:34:00Z",
-  "releaseNotes": "Kalibrasyon belgesinden otomatik okuma (OCR) eklendi; bilgiler onayinizla forma aktarilir. CSV'ye sertifika no, firma ve sonuc eklendi.",
-  "releaseNotesEn": "Added automatic calibration document reading (OCR); details are filled in only after confirmation. CSV now has certificate no, company and result.",
+  "versionCode": 86,
+  "versionName": "1.85",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.85/Hydraulic-Pressure-Calculator-1.85.apk",
+  "sha256": "161f00d05713337884a2919657697f7deae7f00204a6ebbcf150aaf08d93f966",
+  "releaseDate": "2026-11-26T16:42:18Z",
+  "releaseNotes": "Belgede sonraki kalibrasyon tarihi yoksa otomatik 1 yil sonrasi atanir; onay ekraninda degistirilebilir.",
+  "releaseNotesEn": "If the document has no next calibration date, it defaults to 1 year later and can be changed on review.",
   "minimumSupportedVersionCode": 0
 }

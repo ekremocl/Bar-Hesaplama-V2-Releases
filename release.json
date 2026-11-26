@@ -1,10 +1,10 @@
 {
-  "versionCode": 82,
-  "versionName": "1.81",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.81/Hydraulic-Pressure-Calculator-1.81.apk",
-  "sha256": "a4fe423467f70003a214d24f1bd3931c605805190d11889f767a865a70c0e5bd",
-  "releaseDate": "2026-11-25T19:27:19Z",
-  "releaseNotes": "Hakkinda aciklamasi uygulamanin guncel ozelliklerine gore yenilendi.",
-  "releaseNotesEn": "About text updated to reflect the current features of the app.",
+  "versionCode": 83,
+  "versionName": "1.82",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.82/Hydraulic-Pressure-Calculator-1.82.apk",
+  "sha256": "35d715c84f6e7cb35c6cf25affe56cd2e03db0c60c15acb91e67dc07d706f322",
+  "releaseDate": "2026-11-26T16:08:28Z",
+  "releaseNotes": "Ayarlara Kalibrasyon Bildirim Ayarlari eklendi: ozel gun esikleri, suresi gecmis uyari tekrar sikligi ve bildirim kontrol saati.",
+  "releaseNotesEn": "Added Calibration Notification Settings: custom day thresholds, overdue alert repeat frequency and check time.",
   "minimumSupportedVersionCode": 0
 }

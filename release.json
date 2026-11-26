@@ -1,10 +1,10 @@
 {
-  "versionCode": 92,
-  "versionName": "1.91",
-  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.91/Hydraulic-Pressure-Calculator-1.91.apk",
-  "sha256": "52d39da71c9a360803bfe23c5d25dd54476601e5f05c85c174440afbaa1b300a",
-  "releaseDate": "2026-11-26T17:41:24Z",
-  "releaseNotes": "Excel tarih yil-ay-gun duzeltmesi",
-  "releaseNotesEn": "Excel date year-month-day fix",
+  "versionCode": 93,
+  "versionName": "1.92",
+  "apkUrl": "https://github.com/ekremocl/Bar-Hesaplama-V2-Releases/releases/download/v1.92/Hydraulic-Pressure-Calculator-1.92.apk",
+  "sha256": "768d4b6a5565933fa3e9e455082650d9081ced1ceb8009d56ff37bc5c69a3091",
+  "releaseDate": "2026-11-26T17:53:11Z",
+  "releaseNotes": "Excel Tarih sonraki kalibrasyon tarihi olarak alindi, eski kayitlar duzeltilir",
+  "releaseNotesEn": "Excel Date used as next calibration date, old records repaired",
   "minimumSupportedVersionCode": 0
 }
